@@ -12,9 +12,9 @@
     
     <div style="color:coral">
         <h1>Press any key to get started!</h1>
-        <h2>Wins</h2>
+        <h2>Wins:</h2>
         <h2>_ _ _ _ _ _ _</h2>
-        <h2>Number of Guesses Remaining</h2>
+        <h2><span id="guess-left">Number of Guesses Remaining:</span></h2>
         <h2></h2>
 
         <h2><span id=type-letter><strong>Letters Already Guessed:</strong></span></h2>
@@ -25,11 +25,15 @@
     var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
     
     var typeLetter = document.getElementById("type-letter");
+    var guessLeft = document.getElementById("guess-left");
     var count = 0;
+    var guess = 10;
 
     document.onkeyup = function (event) {
         count++;
+        guess--;
         typeLetter.textContent += event.key;
+        guess.textContent += event.key;
     };
     
     
