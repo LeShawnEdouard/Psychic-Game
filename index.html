@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <script src="main.js"></script>
 </head>
-<body>
+<body style="background-color:brown">
     <h1>Press any key to get started!</h1>
 
     <h2>Wins</h2>
@@ -17,12 +17,20 @@
 
     <h2>Number of Guesses Remaining</h2>
 
+    <h2></h2>
+
     <h2>Letters Already Guessed</h2>
+
     <script>
     
     var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
     
-    
+    var count = 0;
+
+    document.onkeyup = function (event) {
+        count++;
+
+    }
     
     
     
