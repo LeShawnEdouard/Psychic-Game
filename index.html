@@ -23,8 +23,10 @@
 
     <script type="text/javascript">
     
+    // This is an array of rappers //
     var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
     
+    // List of variables and referencing classes //
     var typeLetter = document.getElementById("type-letter");
     var guessLeft = document.getElementById("guess-left");
     var count = 0;
@@ -32,6 +34,7 @@
     var isPlaying = true;
     var gameStatus = document.getElementsByClassName("game-status");
 
+    // Using functions to record key strokes //
     document.onkeyup = function (event) {
 
         if (isPlaying) {
