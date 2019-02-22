@@ -14,7 +14,7 @@
         <h1>Press any key to get started!</h1>
         <h1 class="game-status"></h1>
         <h2>Wins:</h2>
-        <h2>_ _ _ _ _ _ _</h2>
+        <h2 id="random-rapper">_ _ _ _ _ _ _</h2>
         <h2>Number of Guesses Remaining:<span id="guess-left"></span></h2>
         <h2></h2>
 
@@ -25,6 +25,7 @@
     
     // This is an array of rappers //
     var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
+    var rappers = rappers[Math.floor(Math.random("random-rapper")*rappers.length)];
     
     // List of variables and referencing classes //
     var typeLetter = document.getElementById("type-letter");
