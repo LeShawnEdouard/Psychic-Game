@@ -12,9 +12,10 @@
     
     <div style="color:coral">
         <h1>Press any key to get started!</h1>
+        <h1 class="game-status"></h1>
         <h2>Wins:</h2>
         <h2>_ _ _ _ _ _ _</h2>
-        <h2><span id="guess-left">Number of Guesses Remaining:</span></h2>
+        <h2>Number of Guesses Remaining:<span id="guess-left"></span></h2>
         <h2></h2>
 
         <h2><span id=type-letter><strong>Letters Already Guessed:</strong></span></h2>
@@ -28,12 +29,25 @@
     var guessLeft = document.getElementById("guess-left");
     var count = 0;
     var guess = 10;
+    var isPlaying = true;
+    var gameStatus = document.getElementsByClassName("game-status");
 
     document.onkeyup = function (event) {
-        count++;
-        guess--;
-        typeLetter.textContent += event.key;
-        guess.textContent += event.key;
+
+        if (isPlaying) {
+            if (event.keyCode >= 65 && event.keyCode <= 90) {
+                count++;
+                guess--;
+                typeLetter.textContent += event.key;
+                guessLeft.textContent = guess;
+            }  
+        }
+
+        if (guess < 1) {
+            isPlaying = false 
+            alert("Game Over!")
+            gameStatus.innerHTML = "Game Over!"
+        }
     };
     
     
