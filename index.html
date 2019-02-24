@@ -16,7 +16,7 @@
         <h1>Press any key to get started!</h1>
         <h1 class="game-status"></h1>
         <h2>Wins:</h2>
-        <h2 id="random-rapper">_ _ _ _ _ _ _</h2>
+        <div id="hold">Hold space</div>
         <h2>You have <span id="guess-left">10</span> lives left</h2>
         <h2></h2>
 
@@ -40,12 +40,15 @@ body    {
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
     // This is an array of rappers //
-    var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
-    var rappers = rappers[Math.floor(Math.random("random-rapper")*rappers.length)];
+    var rappersList = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
 
-    // Loop through the array to randomly select a rapper //
+    // Using Math.random to randomly select rappers from rappers array //
+    var rappers = rappersList[Math.floor(Math.random()*rappersList.length)];
+
+    // Shows how many letters there are in a word. Using "_" //
+    var answerArray = [];
     for (var i = 0; i < rappers.length; i++) {
-        console.log(rappers);
+        answerArray[i] = "_";
     }
     
     // List of variables and referencing classes //
