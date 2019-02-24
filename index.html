@@ -23,6 +23,11 @@
 
     <script type="text/javascript">
     
+    // Alphabet //
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    
     // This is an array of rappers //
     var rappers = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
     var rappers = rappers[Math.floor(Math.random("random-rapper")*rappers.length)];
@@ -46,12 +51,14 @@
                 guessLeft.textContent = guess;
             }  
         }
-
+    // This is an alert if the user runs out of guesses! //
         if (guess < 1) {
             isPlaying = false 
             alert("Game Over!")
             gameStatus.innerHTML = "Game Over!"
         }
+
+        
     };
     
     
