@@ -54,6 +54,11 @@ body    {
     // Variable that will hold the number of letters left to guess //
     var lettersLeft = rappers.length;
 
+    //Will show the user how many blanks are left to fill //
+    while (lettersLeft > 0) {
+        alert(answerArray.join(" "));
+    }
+
     // List of variables and referencing classes //
     var typeLetter = document.getElementById("type-letter");
     var guessLeft = document.getElementById("guess-left");
