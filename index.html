@@ -16,7 +16,7 @@
         <h1>Press any key to get started!</h1>
         <h1 class="game-status"></h1>
         <h2>Wins:</h2>
-        <div id="hold">Hold space</div>
+        <h2 id="_"></h2>
         <h2>You have <span id="guess-left">10</span> lives left</h2>
         <h2></h2>
 
@@ -39,25 +39,25 @@ body    {
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
-    // This is an array of rappers //
-    var rappersList = ["Tupac", "Ice Cube", "Method Man", "Missy Elliott", "LL Cool J", "MC Lyte" ]
 
-    // Using Math.random to randomly select rappers from rappers array //
-    var rappers = rappersList[Math.floor(Math.random()*rappersList.length)];
-
-    // Shows how many letters there are in a word. Using "_" //
-    var answerArray = [];
-    for (var i = 0; i < rappers.length; i++) {
-        answerArray[i] = "_";
+    var $ = function (id) {
+        return document.getElementById(id);
     }
     
-    // Variable that will hold the number of letters left to guess //
-    var lettersLeft = rappers.length;
+        // This is an array of rappers //
+        var rappers = ["tupac", "ice cube", "method man", "missy elliott", "ll cool j", "mc lyte" ]
 
-    //Will show the user how many blanks are left to fill //
-    while (lettersLeft > 0) {
-        alert(answerArray.join(" "));
-    }
+        // Using Math.random to randomly select rappers from rappers array //
+        var choice = Math.floor(Math.random()* 6);
+
+        // sdjdsljljdflkdjlkdj //
+        var answer = rappers[choice];
+        
+        // Variable that will hold the number of letters left to guess //
+        var myLength = answer.length;
+
+        // Will show the length of the word using underscores //
+        var display = [myLength]
 
     // List of variables and referencing classes //
     var typeLetter = document.getElementById("type-letter");
@@ -77,6 +77,13 @@ body    {
                 typeLetter.textContent += event.key;
                 guessLeft.textContent = guess;
             }  
+        }
+        else {
+                for (var j = 0; j < rappers.length; j++ ) {
+                    if (rappersList[j] === event.key) {
+                        answerArray[j] = "_";
+                    }
+                }
         }
     // This is an alert if the user runs out of guesses! //
         if (guess < 1) {
