@@ -14,10 +14,11 @@
     <div style="color:black">
         <h1><strong>Rappers Delight</strong></h1>
         <h1>Press any key to get started!</h1>
-        <h1 class="game-status"></h1>
+        <input type="text" size="40" onkeypress="myFunction(event)">
+        <p id="demo"></p>
         <h2>Wins:</h2>
         <h2 id="rappers"></h2>
-        <h2>You have <span id="guess-left">10</span> lives left</h2>
+        <h2>You have <span id="guesses">10</span> lives left</h2>
         <h2></h2>
 
         <h2><span id=type-letter><strong>Letters Already Guessed:</strong></span></h2>
@@ -82,33 +83,18 @@ body    {
     var output = document.getElementById("rappers");
 
     // Using functions to record key strokes //
-    document.onkeyup = function (event) {
-
-        var setup = function() {
-            if (event.keyCode >= 65 && event.keyCode <= 90) {
-                count++;
-                guess--;
-                typeLetter.textContent += event.key;
-                guessLeft.textContent = guess;
-            }  
+    function myFunction(event) {
+        var x = event.which || event.keyCode;
+        document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
         }
         for (var i = 0; i < answer.length; i++) {
             display [i] = "_";
             output = output + display [i]
         }
 
-        }
-
         window.onload = function() {
             setup();
         }
-    // This is an alert if the user runs out of guesses! //
-        if (guess < 1) {
-            isPlaying = false 
-            alert("Game Over!")
-            gameStatus.innerHTML = "Game Over!"
-        }
-
         
     };
     
@@ -132,7 +118,13 @@ body    {
         attemptsLeft--;
 
         if (win < 1) {
-            document.getElementById("guesses").innerHTML ="YOU WON HOMIE!!!"
+            document.getElementById("guesses").innerHTML ="YOU WON HOMIE!!!";
+        }
+        else if (attemptsLeft < 1) {
+            document.getElementById('guesses').innerHTML ="YOU LOSE HOMIE!!!";
+        }
+        else {
+            document.getElementById("guesses").innerHTML ="You have" + attemptsLeft + "guesses left";
         }
     }
     
