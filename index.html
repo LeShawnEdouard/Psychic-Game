@@ -130,6 +130,10 @@ body    {
         document.getElementById("rappers").innerHTML = output;
         output = "";
         attemptsLeft--;
+
+        if (win < 1) {
+            document.getElementById("guesses").innerHTML ="YOU WON HOMIE!!!"
+        }
     }
     
     
