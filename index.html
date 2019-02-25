@@ -16,7 +16,7 @@
         <h1>Press any key to get started!</h1>
         <h1 class="game-status"></h1>
         <h2>Wins:</h2>
-        <h2 id="_"></h2>
+        <h2 id="rappers"></h2>
         <h2>You have <span id="guess-left">10</span> lives left</h2>
         <h2></h2>
 
@@ -50,27 +50,41 @@ body    {
         // Using Math.random to randomly select rappers from rappers array //
         var choice = Math.floor(Math.random()* 6);
 
-        // sdjdsljljdflkdjlkdj //
+        // Variable that holds the rapper selected from the array //
         var answer = rappers[choice];
         
-        // Variable that will hold the number of letters left to guess //
+        // Variable that holds the number of letters in the word //
         var myLength = answer.length;
 
-        // Will show the length of the word using underscores //
-        var display = [myLength]
+        // Variable that will show the length of the word using underscores //
+        var display = [myLength];
+
+        // Variable that holds # of letters the user has to guess to win //
+        var win = myLength;
+
+        // Variable that creates a character array by splitting the answer //
+        var letters = answer.split('');
+
+        // Variable that gives the starting # of lives to the user //
+        var guess = 10;
+
+        // Variable that will display the underscores on the UI //
+        var output = "";
+
+        // Variable that will contain the user's guess after he/she clicks "guess" //
+        var userLetter = "";
 
     // List of variables and referencing classes //
     var typeLetter = document.getElementById("type-letter");
     var guessLeft = document.getElementById("guess-left");
     var count = 0;
-    var guess = 10;
-    var isPlaying = true;
     var gameStatus = document.getElementsByClassName("game-status");
+    var output = document.getElementById("rappers");
 
     // Using functions to record key strokes //
     document.onkeyup = function (event) {
 
-        if (isPlaying) {
+        var setup = function() {
             if (event.keyCode >= 65 && event.keyCode <= 90) {
                 count++;
                 guess--;
@@ -78,12 +92,15 @@ body    {
                 guessLeft.textContent = guess;
             }  
         }
-        else {
-                for (var j = 0; j < rappers.length; j++ ) {
-                    if (rappersList[j] === event.key) {
-                        answerArray[j] = "_";
-                    }
-                }
+        for (var i = 0; i < answer.length; i++) {
+            display [i] = "_";
+            output = output + display [i]
+        }
+
+        }
+
+        window.onload = function() {
+            setup();
         }
     // This is an alert if the user runs out of guesses! //
         if (guess < 1) {
@@ -95,6 +112,25 @@ body    {
         
     };
     
+    var submit = function() {
+
+
+        output = "";
+        userLetter=$("letter").value;
+        $("letter").value ="";
+
+        for (var c = o; c < answer.length; c++) {
+            alert(letters[c]);
+            if (userLetter.toUpperCase() == letters[c]) {
+                display[c] = userLetter.toUpperCase();
+                win--;
+            }
+                output = output + display [c] + " ";
+        }
+        document.getElementById("rappers").innerHTML = output;
+        output = "";
+        attemptsLeft--;
+    }
     
     
     
