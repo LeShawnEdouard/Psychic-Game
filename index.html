@@ -43,7 +43,7 @@ body    {
 
 
     // Used to randomly select a letter to guess //
-    var letters = letters.length[Math.floor(Math.random() * letters.length)];
+    var randomLetter = letters.length[Math.floor(Math.random() * letters.length)];
         console.log(letters);
 
     var wins = 0 // Shows the user # of wins he/she has earned //
@@ -52,8 +52,10 @@ body    {
     var guessLeft = document.getElementById("guesses")
 
     // function that holds variables ... //
-    var startGame() {
+    function gameFunction(event) {
+        if (event.keyCode >= 65 && event.keyCode <= 90) {
 
+        }
 
         guesses--;
         losses++;
