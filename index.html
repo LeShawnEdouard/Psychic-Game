@@ -14,8 +14,8 @@
     <div id="border" style="color:white">
         <h1><strong>Psychic Game</strong></h1>
         <h1>Press any key to get started!</h1>
-        <h2>Wins:</h2>
-        <h2>Losses:</h2>
+        <h2>Wins:<span id="win-total"></span></h2>
+        <h2>Losses:<span id="loss-total"></span></h2>
         <h2>You have <span id="guesses">10</span> lives left</h2>
         <h2></h2>
 
@@ -44,23 +44,36 @@ body    {
 
     // Used to randomly select a letter to guess //
     var randomLetter = letters.length[Math.floor(Math.random() * letters.length)];
-        console.log(letters);
+        console.log(randomLetter);
 
-    var wins = 0 // Shows the user # of wins he/she has earned //
-    var losses = 0 // Shows the user # of losses he/she has earned //
-    var guesses = 0 // Shows the user # of guesses he/she has left //    
-    var guessLeft = document.getElementById("guesses")
+    var wins = 0; // Shows the user # of wins he/she has earned //
+    var losses = 0; // Shows the user # of losses he/she has earned //
+    var guesses = 10; // Shows the user # of guesses he/she has left // 
 
-    // function that holds variables ... //
-    function gameFunction(event) {
-        if (event.keyCode >= 65 && event.keyCode <= 90) {
+    // Variables to reference id from DOM //
+    var winTotal = document.getElementById("win-total");
+    var lossTotal = document.getElementById("loss-total");
+    var guessLeft = document.getElementById("guesses");
 
-        }
-
+    document.onkey = function(event) {
         guesses--;
-        losses++;
-        wins++;
+        userText.textContent += event.key;
+        guessLeft.textContent = guesses;
     }
+
+
+    // // function that holds variables ... //
+    // function gameFunction(event) {
+    //     if (event.keyCode >= 65 && event.keyCode <= 90) {
+    //         alert('This is a test');
+    //     }
+    //     for (var j = 0; j < favTVshows.length; j++) {
+    //         guessLeft = guesses;
+    //         lossTotal = losses;
+    //         winTotal = wins;
+    //     }
+
+    // }
 
 
 
