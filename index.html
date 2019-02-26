@@ -46,16 +46,18 @@ body    {
     var letters = letters.length[Math.floor(Math.random() * letters.length)];
         console.log(letters);
 
+    var wins = 0 // Shows the user # of wins he/she has earned //
+    var losses = 0 // Shows the user # of losses he/she has earned //
+    var guesses = 0 // Shows the user # of guesses he/she has left //    
+    var guessLeft = document.getElementById("guesses")
+
     // function that holds variables ... //
     var startGame() {
-        
 
 
-
-
-        var wins = 0 // Shows the user # of wins he/she has earned //
-        var losses = 0 // Shows the user # of losses he/she has earned //
-        var guesses = 0 // Shows the user # of guesses he/she has left //
+        guesses--;
+        losses++;
+        wins++;
     }
 
 
