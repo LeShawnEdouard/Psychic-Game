@@ -11,7 +11,7 @@
 <body>
     
     <!-- Text showing the user number of wins/losses and lives left -->
-    <div style="color:white">
+    <div id="border" style="color:white">
         <h1><strong>Psychic Game</strong></h1>
         <h1>Press any key to get started!</h1>
         <h2>Wins:</h2>
@@ -29,6 +29,9 @@ body    {
     background-position: center;
     background-size: cover;
 }
+#border {
+
+}
 </style>
 
 <script type="text/javascript">
@@ -37,6 +40,10 @@ body    {
     var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+    // Shows number of wins/losses as starting point //
+    var wins = 0
+    var losses = 0
     
     // Used to randomly select a letter to guess //
     var letters = letters.length[Math.floor(Math.random() * letters.length)];
