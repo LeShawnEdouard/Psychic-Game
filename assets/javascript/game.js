@@ -1,4 +1,4 @@
-var wins = 0; // Shows the user # of wins he/she has earned //
+    var wins = 0; // Shows the user # of wins he/she has earned //
     var losses = 0; // Shows the user # of losses he/she has earned //
     var guesses = 10; // Shows the user # of guesses he/she has //
     
@@ -11,23 +11,37 @@ var wins = 0; // Shows the user # of wins he/she has earned //
 
     var vls = {
         vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
-        getVowels: function(){
-            var randomLetter = this.vowels.length[Math.floor(Math.random() * this.vowels.length)];
+        getVowels: function(){console.log(this.vowels.length)
+            var randomLetter = this.vowels[Math.floor(Math.random() * this.vowels.length)];
+                return randomLetter;
         }
     }
     vls.getVowels();
     console.log(vls);
+    var computerGuess = vls.getVowels()
 
-    function gameFunction(randomLetter) {
+    document.onkeyup = function(event) {
+        // if guess equal vowel, increase wins b
+        console.log("hjjhjhh")
+        var userGuess = event.key;
+        console.log(userGuess, "userGuess")
+        console.log(computerGuess,"computerGuess")
         winTotal.textContent = wins;
         lossTotal.textContent = losses;
         guessLeft.textContent = guesses;
         if (onkeypress === vowels[i]) {
             wins++;
             guesses--;
-        }
+        }else {
+            losses++;
+        }    
     }
-    document.onkeypress = gameFunction;
+
+
+
+    
+
+
 
 
 
