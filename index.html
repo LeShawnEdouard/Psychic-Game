@@ -13,13 +13,13 @@
     <!-- Text showing the user number of wins/losses and lives left -->
     <div id="border" style="color:white">
         <h1><strong>Psychic Game</strong></h1>
-        <h1>Press any key to get started!</h1>
+        <h1>Press any key to get started! Choose a vow to win.</h1>
         <h2>Wins:<span id="win-total"></span></h2>
         <h2>Losses:<span id="loss-total"></span></h2>
         <h2>You have <span id="guesses">10</span> lives left</h2>
         <h2></h2>
 
-        <h2><span id=type-letter><strong>Letters Already Guessed:</strong></span></h2>
+        <h2><strong>Letters Already Guessed:</strong><span id=type-letter></span></h2>
     </div>
 
 <!-- Background image of Public Enemy-->
@@ -36,32 +36,41 @@ body    {
 
 <script type="text/javascript">
 
-    // Alphabet //
-    var letters = ['a', 'e', 'i', 'o', 'u'];
-
-    // Shows a for loop of the array //
-    for (i = 0; i < letters.length; i++) {
-        console.log(letters)
-    }
-    
-    // Used to randomly select a letter to guess //
-    var randomLetter = letters.length[Math.floor(Math.random() * letters.length)];
-        console.log(randomLetter);
+    // Vowels //
+    var vowels = ['a', 'e', 'i', 'o', 'u'];
 
     var wins = 0; // Shows the user # of wins he/she has earned //
     var losses = 0; // Shows the user # of losses he/she has earned //
-    var guesses = 10; // Shows the user # of guesses he/she has // 
+    var guesses = 10; // Shows the user # of guesses he/she has //
+    
+    
 
     // Variables to reference id from DOM //
     var winTotal = document.getElementById("win-total");
     var lossTotal = document.getElementById("loss-total");
     var guessLeft = document.getElementById("guesses");
 
-    document.onkey = function(event) {
-        guesses--;
-        userText.textContent += event.key;
-        guessLeft.textContent = guesses;
+    function getRandomNumber() {
+        // Used to randomly select a letter to guess //
+        var randomLetter = vowels.length[Math.floor(Math.random() * vowels.length)];
+        console.log(randomLetter);
     }
+
+    function gameFunction(randomLetter) {
+        if ()
+    }
+    document.onkeypress = gameFunction;
+    
+
+
+    // document.onkey = function(event) {
+    //     for (i = 0; i < letters.length; i++) {
+    //         if (event.key === [i]) wins++;
+    //     }
+    //     guesses--;
+    //     userText.textContent += event.key;
+    //     guessLeft.textContent = guesses;
+    // }
 
 
     // // function that holds variables ... //
