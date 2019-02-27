@@ -37,18 +37,20 @@ body    {
 <script type="text/javascript">
 
     // Alphabet //
-    var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var letters = ['a', 'e', 'i', 'o', 'u'];
 
-
+    // Shows a for loop of the array //
+    for (i = 0; i < letters.length; i++) {
+        console.log(letters)
+    }
+    
     // Used to randomly select a letter to guess //
     var randomLetter = letters.length[Math.floor(Math.random() * letters.length)];
         console.log(randomLetter);
 
     var wins = 0; // Shows the user # of wins he/she has earned //
     var losses = 0; // Shows the user # of losses he/she has earned //
-    var guesses = 10; // Shows the user # of guesses he/she has left // 
+    var guesses = 10; // Shows the user # of guesses he/she has // 
 
     // Variables to reference id from DOM //
     var winTotal = document.getElementById("win-total");
