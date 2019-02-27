@@ -57,9 +57,15 @@ body    {
     }
 
     function gameFunction(randomLetter) {
-        if ()
+        if (onkeypress === vowels[i]) {
+            wins++1;
+            guesses--1;
+        }
     }
     document.onkeypress = gameFunction;
+    winTotal.textContent = wins;
+    lossTotal.textContent = losses;
+    guessLeft.textContent = guesses;
     
 
 
