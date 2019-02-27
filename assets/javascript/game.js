@@ -1,7 +1,4 @@
-    // Vowels //
-    var vowels = ['a', 'e', 'i', 'o', 'u'];
-
-    var wins = 0; // Shows the user # of wins he/she has earned //
+var wins = 0; // Shows the user # of wins he/she has earned //
     var losses = 0; // Shows the user # of losses he/she has earned //
     var guesses = 10; // Shows the user # of guesses he/she has //
     
@@ -12,11 +9,14 @@
     var lossTotal = document.getElementById("loss-total");
     var guessLeft = document.getElementById("guesses");
 
-    function getRandomVowel() {
-        // Used to randomly select a letter to guess //
-        var randomLetter = vowels.length[Math.floor(Math.random() * vowels.length)];
-        console.log(randomLetter);
+    var vls = {
+        vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
+        getVowels: function(){
+            var randomLetter = this.vowels.length[Math.floor(Math.random() * this.vowels.length)];
+        }
     }
+    vls.getVowels();
+    console.log(vls);
 
     function gameFunction(randomLetter) {
         winTotal.textContent = wins;
@@ -28,6 +28,30 @@
         }
     }
     document.onkeypress = gameFunction;
+
+
+
+
+
+
+
+    // function getRandomVowel() {
+    //     // Used to randomly select a letter to guess //
+    //     var randomLetter = vowels.length[Math.floor(Math.random() * vowels.length)];
+    //     return randomLetter;
+    // }
+    // console.log(getRandomVowel());
+
+    // function gameFunction(randomLetter) {
+    //     winTotal.textContent = wins;
+    //     lossTotal.textContent = losses;
+    //     guessLeft.textContent = guesses;
+    //     if (onkeypress === vowels[i]) {
+    //         wins++;
+    //         guesses--;
+    //     }
+    // }
+    // document.onkeypress = gameFunction;
     
 
 
