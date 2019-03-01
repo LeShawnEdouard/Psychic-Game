@@ -9,34 +9,43 @@
     var lossTotal = document.getElementById("loss-total");
     var guessLeft = document.getElementById("guesses");
 
-    var vls = {
-        vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
-        getVowels: function(){console.log(this.vowels.length)
-            var randomLetter = this.vowels[Math.floor(Math.random() * this.vowels.length)];
-                return randomLetter;
-        }
-    }
-    vls.getVowels();
-    console.log(vls);
-    var computerGuess = vls.getVowels()
+    // var vls = {
+    //     vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
+    //     getVowels: function(){console.log(this.vowels.length)
+    //         var randomLetter = this.vowels[Math.floor(Math.random() * this.vowels.length)];
+    //             return randomLetter;
+    //     }
+    // }
+    // vls.getVowels();
+    // console.log(vls);
+    // var computerGuess = vls.getVowels()
 
     document.onkeyup = function(event) {
-        // if guess equal vowel, increase wins b
-        console.log("hjjhjhh")
+        // Function to match keypress with random vowel by the computer //
+        var vls = {
+            vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
+            getVowels: function(){console.log(this.vowels.length)
+                var randomLetter = this.vowels[Math.floor(Math.random() * this.vowels.length)];
+                    return randomLetter;
+            }
+        }
+        
         var userGuess = event.key;
         console.log(userGuess, "userGuess")
         console.log(computerGuess,"computerGuess")
         winTotal.textContent = wins;
         lossTotal.textContent = losses;
         guessLeft.textContent = guesses;
-        if (onkeypress === vowels[i]) {
+        if (event.key === vowels[i]) {
             wins++;
             guesses--;
         }else {
             losses++;
         }    
     }
-
+    vls.getVowels();
+    console.log(vls);
+    var computerGuess = vls.getVowels()    
 
 
     
