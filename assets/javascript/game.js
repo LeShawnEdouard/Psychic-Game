@@ -8,6 +8,8 @@
     var winTotal = document.getElementById("win-total");
     var lossTotal = document.getElementById("loss-total");
     var guessLeft = document.getElementById("guesses");
+    var computerGuess = document.getElementById("computer-guess");
+    var userGuess = document.getElementById("user-guess");
 
     // var vls = {
     //     vowels: ['a', 'e', 'i', 'o', 'u'], // Array of vowels to chose from //
