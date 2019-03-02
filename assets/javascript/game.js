@@ -3,7 +3,6 @@
     var guesses = 10; // Shows the user # of guesses he/she has //
     var compGuess = "";
     var guessDisplay = "";
-    var computerFunction = vls;
     
 
     // Variables to reference id from DOM //
@@ -40,7 +39,8 @@
     }
     vls.getVowels();
     console.log(vls);
-    var computerGuess = vls.getVowels()    
+    var computerGuess = vls.getVowels()
+
 
 
     
