@@ -13,8 +13,10 @@ body    {
     border-width: 1px;
     background-color:transparent;
     text-align: center;
+    font-family: Papyrus,fantasy; 
 }
 .header {
     text-align: center;
     color: white;
+    font-family: Papyrus,fantasy; 
 }
