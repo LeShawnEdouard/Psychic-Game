@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    var wins = 0; // Shows the user # of wins he/she has earned //
-    var losses = 0; // Shows the user # of losses he/she has earned //
+    var wins =; // Shows the user # of wins he/she has earned //
+    var losses =; // Shows the user # of losses he/she has earned //
     var guesses = 10; // Shows the user # of guesses he/she has //
     var compGuess = "";
     var guessDisplay = "";

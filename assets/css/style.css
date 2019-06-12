@@ -4,7 +4,7 @@ body    {
     background-size: cover;
 }
 .container {
-    color:white;
+    color:cornsilk;
     padding: 20px 10px;
     width: 600px;
     margin:auto;
@@ -17,6 +17,6 @@ body    {
 }
 .header {
     text-align: center;
-    color: white;
+    color: cornsilk;
     font-family: Papyrus,fantasy; 
 }
