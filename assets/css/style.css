@@ -24,3 +24,14 @@ hr  {
     width: 550px;
     color: cornsilk;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: cornsilk;
+    text-align: justify;
+    opacity: .40;
+    font-family: Brush Script MT,cursive;
+ }
