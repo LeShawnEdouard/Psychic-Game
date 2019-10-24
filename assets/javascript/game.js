@@ -31,6 +31,17 @@ var updateLettersGuessed = function() {
     document.querySelector("letters-guessed").innerHTML = lettersGuessed.join(", ");
 };
 
+var reset = function() {
+    guessesLeft = 10;
+    lettersGuessed = [];
+    updateGuessesLeft();
+    updateLetterToGuess();
+    updateLettersGuessed();
+};
+
+
+
+
 
 getComputerGuess() // Update value of compGuess
 screenManager()
@@ -51,14 +62,6 @@ document.onkeyup = function (event) {
 }
 
 
-
-// Functions go here
-function screenManager() {
-    document.querySelector("#win-total").innerHTML = wins;
-    document.querySelector("#loss-total").innerHTML = losses;
-    document.querySelector("#user-guess").innerHTML = userGuess;
-    document.querySelector("#already-guessed").innerHTML += userGuess;
-}
 
 function getComputerGuess() {
     compGuess = vowels[Math.floor(Math.random() * vowels.length)];
