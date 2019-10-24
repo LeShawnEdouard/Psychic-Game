@@ -1,20 +1,18 @@
+var vowels = ["a", "e", "i", "o", "u"]
+// Array that will contain all vowels/letters.
 
+var lettersGuessed = [];
+// Array that will hold what the user guessed.
 
+var computerGuess = null;
+// Holds the random letter to be guessed.
 
+var guessesLeft = 10;
+// Default number of guesses the user has.
 
-// Using the "DOMContentLoaded" event handler to start the game upon page load
-// document.addEventListener("DOMContentLoaded", function(event) {
-// Variables used to set our default values when the game begins     
 var wins = 0;
 var losses = 0;
-var livesLeft = 10;
-var compGuess = "";
-var userGuess = "";
-
-var vowels = ["a", "e", "i", "o", "u"]
-console.log(wins, losses, livesLeft);
-
-// This is the flow of events
+// Default number of wins/losses at start of the game.
 
 getComputerGuess() // Update value of compGuess
 screenManager()
