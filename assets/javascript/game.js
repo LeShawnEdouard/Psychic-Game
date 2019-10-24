@@ -14,10 +14,17 @@ var wins = 0;
 var losses = 0;
 // Default number of wins/losses at start of the game.
 
+
+// The following functions will update updateGuessesLeft, updateLetterToGuess, and updateLettersGuessed.
 var updateGuessesLeft = function() {
     // Function used to update the number of guesses left.
     document.querySelector("#guesses-left").innerHTML = guessesLeft;
-}
+};
+
+var updateLetterToGuess = function() {
+    // Function used to randomize a letter from the vowels array and assign it to the variable.
+    getComputerGuess = vowels[Math.floor(Math.random() * vowels.length)];
+};
 
 
 
@@ -46,8 +53,6 @@ document.onkeyup = function (event) {
 function screenManager() {
     document.querySelector("#win-total").innerHTML = wins;
     document.querySelector("#loss-total").innerHTML = losses;
-    document.querySelector("#lives-left").innerHTML = livesLeft;
-    // document.querySelector("#computer-guess").innerHTML = compGuess;
     document.querySelector("#user-guess").innerHTML = userGuess;
     document.querySelector("#already-guessed").innerHTML += userGuess;
 }
