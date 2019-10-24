@@ -14,6 +14,14 @@ var wins = 0;
 var losses = 0;
 // Default number of wins/losses at start of the game.
 
+var updateGuessesLeft = function() {
+    // Function used to update the number of guesses left.
+    document.querySelector("#guesses-left").innerHTML = guessesLeft;
+}
+
+
+
+
 getComputerGuess() // Update value of compGuess
 screenManager()
 document.onkeyup = function (event) {
