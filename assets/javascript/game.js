@@ -31,6 +31,7 @@ var updateLettersGuessed = function() {
     document.querySelector("letters-guessed").innerHTML = lettersGuessed.join(", ");
 };
 
+// Function used to reset the game.
 var reset = function() {
     guessesLeft = 10;
     lettersGuessed = [];
@@ -39,7 +40,9 @@ var reset = function() {
     updateLettersGuessed();
 };
 
-
+// Execute on page load.
+    updateGuessesLeft();
+    updateLetterToGuess();
 
 
 
