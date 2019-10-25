@@ -66,6 +66,14 @@ document.onkeydown = function (event) {
         reset();
     }
 
+    if (guessesLeft === 0) {
+        losses++;
+        document.querySelector("losses").innerHTML = losses;
+
+        reset();
+    }
+
+
 
 }
 
