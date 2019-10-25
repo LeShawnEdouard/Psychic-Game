@@ -46,9 +46,17 @@ var reset = function() {
 
 
 
-getComputerGuess() // Update value of compGuess
-screenManager()
-document.onkeyup = function (event) {
+document.onkeydown = function (event) {
+
+    guessesLeft--;
+
+    var vowels = event.key.toLowerCase();
+
+    lettersGuessed.push(vowels);
+
+    
+
+
     userGuess = event.key;
     if(userGuess === compGuess) {
         wins ++;
