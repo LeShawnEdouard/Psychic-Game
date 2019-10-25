@@ -4,7 +4,7 @@ var vowels = ["a", "e", "i", "o", "u"]
 var lettersGuessed = [];
 // Array that will hold what the user guessed.
 
-var guessedLetter = null;
+var randomLetter = null;
 // Holds the random letter to be guessed.
 
 var guessesLeft = 10;
@@ -23,7 +23,7 @@ var updateGuessesLeft = function() {
 
 var updateLetterToGuess = function() {
     // Function used to randomize a letter from the vowels array and assign it to the variable.
-    getComputerGuess = vowels[Math.floor(Math.random() * vowels.length)];
+    randomLetter = vowels[Math.floor(Math.random() * vowels.length)];
 };
 
 var updateLettersGuessed = function() {
@@ -34,7 +34,7 @@ var updateLettersGuessed = function() {
 // Function used to reset the game.
 var reset = function() {
     guessesLeft = 10;
-    lettersGuessed = [];
+    randomLetter = [];
     updateGuessesLeft();
     updateLetterToGuess();
     updateLettersGuessed();
@@ -59,7 +59,7 @@ document.onkeydown = function (event) {
     updateLettersGuessed();
 
 
-    if (vowels === guessedLetter) {
+    if (vowels === randomLetter) {
         wins++;
         document.querySelector("#wins").innerHTML = wins;
 
@@ -76,8 +76,3 @@ document.onkeydown = function (event) {
 
 
 };
-
-
-
-
-// })
