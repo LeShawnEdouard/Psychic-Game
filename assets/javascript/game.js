@@ -4,7 +4,7 @@ var vowels = ["a", "e", "i", "o", "u"]
 var lettersGuessed = [];
 // Array that will hold what the user guessed.
 
-var computerGuess = null;
+var guessedLetter = null;
 // Holds the random letter to be guessed.
 
 var guessesLeft = 10;
@@ -59,26 +59,14 @@ document.onkeydown = function (event) {
     updateLettersGuessed();
 
 
-    userGuess = event.key;
-    if(userGuess === compGuess) {
-        wins ++;
-        alert("You have won!!!");
+    if (vowels === guessedLetter) {
+        wins++;
+        document.querySelector("#wins").innerHTML = wins;
+
+        reset();
     }
-    else {
-        livesLeft --;
-    }
-    if(livesLeft < 1) {
-        losses ++;
-        alert("Sorry dude. You suck! The correct letter is" + " " + compGuess)
-    }
-    screenManager() // set variable values to HTML
-}
 
 
-
-function getComputerGuess() {
-    compGuess = vowels[Math.floor(Math.random() * vowels.length)];
-    console.log("compGuess" , compGuess);
 }
 
 
