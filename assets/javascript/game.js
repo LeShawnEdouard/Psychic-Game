@@ -47,14 +47,14 @@ var reset = function() {
 
 
 document.onkeydown = function (event) {
-
+    // Will decrement guesses left by 1.
     guessesLeft--;
-
+    // Will automatically convert letters to lower case.
     var vowels = event.key.toLowerCase();
-
+    // Will push all letters guessed into the lettersGuessed array.
     lettersGuessed.push(vowels);
 
-    
+
 
 
     userGuess = event.key;
