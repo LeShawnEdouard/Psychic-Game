@@ -54,7 +54,9 @@ document.onkeydown = function (event) {
     // Will push all letters guessed into the lettersGuessed array.
     lettersGuessed.push(vowels);
 
-
+    // Will execute both functions that will pass through the DOM elements.
+    updateGuessesLeft();
+    updateLettersGuessed();
 
 
     userGuess = event.key;
