@@ -7,7 +7,7 @@ var lettersGuessed = [];
 var randomLetter = null;
 // Holds the random letter to be guessed.
 
-var guessesLeft = 10;
+var guessesLeft = 3;
 // Default number of guesses the user has.
 
 var wins = 0;
@@ -33,7 +33,7 @@ var updateLettersGuessed = function() {
 
 // Function used to reset the game.
 var reset = function() {
-    guessesLeft = 10;
+    guessesLeft = 3;
     randomLetter = [];
     updateGuessesLeft();
     updateLetterToGuess();
