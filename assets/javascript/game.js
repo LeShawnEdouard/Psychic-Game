@@ -43,7 +43,7 @@ var reset = function() {
 // Execute on page load.
     updateGuessesLeft();
     updateLetterToGuess();
-
+    
 
 
 document.onkeydown = function (event) {
@@ -68,7 +68,7 @@ document.onkeydown = function (event) {
 
     if (guessesLeft === 0) {
         losses++;
-        document.querySelector("losses").innerHTML = losses;
+        document.querySelector("#losses").innerHTML = losses;
 
         reset();
     }

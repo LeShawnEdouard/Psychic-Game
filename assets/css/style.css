@@ -24,6 +24,9 @@ hr  {
     width: 550px;
     color: cornsilk;
 }
+.w3-container {
+    background-color: red;
+}
 .footer {
     position: fixed;
     left: 0;
