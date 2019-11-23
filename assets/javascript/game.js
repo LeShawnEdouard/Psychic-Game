@@ -33,7 +33,7 @@ var updateLettersGuessed = function() {
 };
 
 var removeLettersGuessed = function() {
-
+    // Function used to remove the letters guessed when user wins/losses.
     document.querySelector("#letters-guessed").innerHTML = "";
 };
 
