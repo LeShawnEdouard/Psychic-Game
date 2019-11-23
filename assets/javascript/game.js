@@ -44,7 +44,6 @@ var reset = function() {
     randomLetter = [];
     updateGuessesLeft();
     updateLetterToGuess();
-    // updateLettersGuessed().innerHTML = lettersGuessed.remove();
     removeLettersGuessed();
 };
 
@@ -66,21 +65,18 @@ document.onkeydown = function (event) {
     updateGuessesLeft();
     updateLettersGuessed();
 
-
+    // Condition executed if the user guessed the vowel correctly.
     if (vowels === randomLetter) {
         wins++;
         document.querySelector("#wins").innerHTML = wins;
-
+        // Resets the game if user wins
         reset();
     }
-
+    // Condition executed if the user did not guess the vowel correctly.
     if (guessesLeft === 0) {
         losses++;
         document.querySelector("#losses").innerHTML = losses;
-
+        // Resets the game if user losses
         reset();
     }
-
-
-
 };
