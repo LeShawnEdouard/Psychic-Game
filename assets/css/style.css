@@ -20,6 +20,9 @@ body    {
     color: cornsilk;
     font-family: Papyrus,fantasy; 
 }
+.middle-text {
+    font-size: 20px;
+}
 hr  {
     width: 550px;
     color: cornsilk;
